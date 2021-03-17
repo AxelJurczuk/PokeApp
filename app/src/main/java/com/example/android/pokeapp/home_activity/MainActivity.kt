@@ -1,7 +1,8 @@
-package com.example.android.pokeapp
+package com.example.android.pokeapp.home_activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.android.pokeapp.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
