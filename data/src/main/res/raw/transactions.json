@@ -1,0 +1,81 @@
+[{
+  "id": 1,
+  "date": "2018-07-11T22:49:24.000Z",
+  "amount": -193.38,
+  "fee": -3.18,
+  "description": "Prueba mockeada"
+}, {
+  "id": 2,
+  "date": "2018-07-14T16:54:27.000Z",
+  "amount": 165.36,
+  "description": "Prueba mockeada"
+}, {
+  "id": 3,
+  "date": "2018-07-24T18:10:10.000Z",
+  "amount": -113.86,
+  "description": ""
+}, {
+  "id": 4,
+  "date": "2018--11T11:31:27.000Z",
+  "amount": -153.62,
+  "fee": -3.14,
+  "description": "Prueba mockeada"
+}, {
+  "id": 5,
+  "date": "2018-07-19T21:33:19.000Z",
+  "amount": -38.67
+}, {
+  "id": 6,
+  "date": "2018-07-29T17:56:43.000Z",
+  "amount": 87.84,
+  "fee": -1.11,
+  "description": "Prueba mockeada"
+}, {
+  "id": 7,
+  "date": "2018-07-21T19:13:23.000Z",
+  "amount": 37.74,
+  "fee": 0.0,
+  "description": "Prueba mockeada"
+}, {
+  "id": 8,
+  "date": "2018-07-22T13:48:48.000Z",
+  "amount": 87.95,
+  "description": "Prueba mockeada"
+}, {
+  "id": 9,
+  "date": "2018-07-24T21:29:11.000Z",
+  "amount": -161.56,
+  "fee": -4.95,
+  "description": null
+}, {
+  "id": 10,
+  "date": "2018-07-26T15:20:52.000Z",
+  "amount": 92.54,
+  "description": "Prueba mockeada"
+}, {
+  "id": 11,
+  "date": "2018-07-30T19:36:60.000Z",
+  "amount": 184.98
+}, {
+  "id": 12,
+  "date": "2018-07-24T56.000Z",
+  "amount": -37.22,
+  "fee": -3.99,
+  "description": "Prueba mockeada"
+}, {
+  "id": 13,
+  "date": "2018-07-28T14:14:17.000Z",
+  "amount": 96.56,
+  "description": ""
+}, {
+  "id": 14,
+  "date": "07-22T13:51:12.000Z",
+  "amount": -144.63,
+  "fee": -4.74,
+  "description": "Prueba mockeada"
+}, {
+  "id": 15,
+  "date": "2018-07-26T19:26:10.000Z",
+  "amount": 166.83,
+  "description": "Prueba mockeada"
+}]

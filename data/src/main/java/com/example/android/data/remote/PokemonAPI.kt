@@ -1,10 +1,17 @@
 package com.example.android.data.remote
 
 import com.example.android.data.models.Pokemon
+import com.example.android.data.models.PokemonDetails
+import com.example.android.data.models.PokemonList
 import retrofit2.Response
 import retrofit2.http.GET
+import retrofit2.http.Path
 
 interface PokemonAPI {
-    @GET
-    suspend fun getPokemonList():Response<List<Pokemon>>
+    @GET("pokemon?limit=40")
+    suspend fun getPokemonList():Response<PokemonList>
+
+    @GET("pokemon/{id}")
+    suspend fun getPokemonDetails(@Path("id") id:Int):Response<PokemonDetails>
+
 }

@@ -19,9 +19,24 @@ android {
     }
 
     buildTypes {
+        debug {
+            testCoverageEnabled true
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    flavorDimensions "default" //Mandatory
+
+    productFlavors {
+        mock {
+            buildConfigField "String", "BaseURL", '"https://www.google.com"'
+            buildConfigField "boolean", "mock", "true"
+        }
+        pro {
+            buildConfigField "String", "BaseURL", '"https://pokeapi.co/api/v2/"'
+            buildConfigField "boolean", "mock", "false"
         }
     }
     compileOptions {
