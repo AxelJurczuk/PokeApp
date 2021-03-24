@@ -18,6 +18,7 @@ data class PokemonDetails(
     val name: String,
     @Json(name = "sprites")
     val picture: Picture,
+    val types: List<Types>,
     val species: Species,
     val weight: Int,
     @Json(name = "base_experience")
@@ -34,13 +35,5 @@ data class Species(val name: String)
 data class Types (val type:Type)
 
 data class Type (val name:String)
-/*
-//ESTO ES LO QUE DEBERIA AGREGAR CONVIERTIENDOLO
-val types: List<Types>,
-
-data class Types (val type:Type)
-
-data class Type (val name:String)
- */
 
 

@@ -3,7 +3,9 @@ package com.example.android.data.local
 import androidx.room.TypeConverter
 import com.example.android.data.models.domain.Picture
 import com.example.android.data.models.domain.Species
+import com.example.android.data.models.domain.Type
 import com.example.android.data.models.domain.Types
+
 
 class Converters {
 
@@ -27,28 +29,14 @@ class Converters {
         return Species(name)
     }
 
-    /*
     @TypeConverter
-    fun fromTypes (types: Types): Type {
-        return types.type
+    fun fromTypes (typesList: List<Types>): String {
+        return typesList.joinToString { it.type.name }
     }
 
     @TypeConverter
-    fun toTypes (type:Type):Types{
-        return Types(type)
+    fun toTypes (type:String):List<Types>{
+        return type.split(",").map { Types(Type(it.trim())) }
     }
-
-    @TypeConverter
-    fun fromType (type: Type):String{
-        return type.name
-    }
-
-    @TypeConverter
-    fun toType (name:String):Type{
-        return Type(name)
-    }
-
-     */
-
 
 }

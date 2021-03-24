@@ -25,7 +25,6 @@ class ListViewModel(private val repository: PokemonRepository) : BaseViewModel()
                     setShowError(result)
                 }
             }
-
             _isLoading.postValue(false)
         }
     }
