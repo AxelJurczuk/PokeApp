@@ -1,8 +1,8 @@
 package com.example.android.data.remote
 
-import com.example.android.data.models.Pokemon
-import com.example.android.data.models.PokemonDetails
-import com.example.android.data.models.PokemonList
+
+import com.example.android.data.models.domain.PokemonDetails
+import com.example.android.data.models.domain.PokemonList
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path

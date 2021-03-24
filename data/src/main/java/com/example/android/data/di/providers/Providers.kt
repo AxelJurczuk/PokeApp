@@ -2,6 +2,7 @@ package com.example.android.data.di.providers
 
 import android.app.Application
 import android.util.Log
+import com.example.android.data.local.PokemonDatabase
 import com.example.android.data.remote.PokemonAPI
 import com.example.android.data.remote.interceptors.MockInterceptor
 import com.example.android.data.repositories.PokemonRepository
@@ -47,6 +48,10 @@ fun providePokemonAPI(retrofit: Retrofit): PokemonAPI{
     return retrofit.create(PokemonAPI::class.java)
 }
 
-fun providePokemonRepository(pokemonAPI: PokemonAPI):PokemonRepository{
-    return PokemonRepository(pokemonAPI)
+fun providePokemonDatabase(application: Application):PokemonDatabase{
+    return PokemonDatabase.getInstance(application)
+}
+
+fun providePokemonRepository(pokemonAPI: PokemonAPI, pokemonDatabase:PokemonDatabase):PokemonRepository{
+    return PokemonRepository(pokemonAPI,pokemonDatabase)
 }

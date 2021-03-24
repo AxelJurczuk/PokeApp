@@ -1,5 +1,8 @@
-package com.example.android.data.models
+package com.example.android.data.models.domain
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+import com.example.android.data.commons.Constants
 import com.squareup.moshi.Json
 
 data class PokemonList(
@@ -9,11 +12,12 @@ data class PokemonList(
 
 data class Pokemon(val name: String, val url: String)
 
+@Entity(tableName = Constants.TABLE_POKEMON)
 data class PokemonDetails(
+    @PrimaryKey val id:Int,
     val name: String,
     @Json(name = "sprites")
     val picture: Picture,
-    val types: List<Types>,
     val species: Species,
     val weight: Int,
     @Json(name = "base_experience")
@@ -25,10 +29,18 @@ data class Picture(
     val frontPicture: String
 )
 
-data class Types (val slot:Int, val type:Type)
+data class Species(val name: String)
+
+data class Types (val type:Type)
 
 data class Type (val name:String)
+/*
+//ESTO ES LO QUE DEBERIA AGREGAR CONVIERTIENDOLO
+val types: List<Types>,
 
-data class Species(val name: String)
+data class Types (val type:Type)
+
+data class Type (val name:String)
+ */
 
 

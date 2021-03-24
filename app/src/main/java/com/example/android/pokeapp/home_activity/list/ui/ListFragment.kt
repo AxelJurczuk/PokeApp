@@ -32,17 +32,17 @@ class ListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        listViewModel.fetchPokemons()
+
         listViewModel.pokemonList.observe(viewLifecycleOwner){
             binding.tvName.text = it.joinToString { it.name }
-            binding.tvPicture.text = it.joinToString { it.picture.frontPicture }
-            binding.tvType.text = it.joinToString { it.types[0].type.name }
-            binding.tvWeight.text = it.joinToString { it.weight.toString() }
 
             Log.i("pokeList",it.joinToString { it.name})
-            Log.i("pokeList",it.joinToString { it.picture.frontPicture})
-            Log.i("pokeList",it.joinToString { it.types[0].type.name})
-            Log.i("pokeList",it.joinToString { it.weight.toString()})
 
+        }
+
+        listViewModel.showMessage.observe(viewLifecycleOwner){
+            Toast.makeText(requireContext(), it, Toast.LENGTH_SHORT).show()
         }
 
     }
