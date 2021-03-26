@@ -9,6 +9,10 @@ val dataModule = module {
     single { provideMoshi() }
     single { provideRetrofit(get(),get())}
     single { providePokemonAPI(get()) }
+
     single { providePokemonDatabase(get())}
-    single { providePokemonRepository(get(),get()) }
+
+    single { provideProfileDataStore(get())}
+
+    single { providePokemonRepository(get(),get(), get())}
 }

@@ -1,19 +1,19 @@
 package com.example.android.pokeapp.home_activity.list.ui
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.navigation.fragment.findNavController
 import com.example.android.data.models.domain.PokemonDetails
-import com.example.android.data.remote.ResultHandler
 import com.example.android.pokeapp.R
 import com.example.android.pokeapp.databinding.FragmentListBinding
 import com.example.android.pokeapp.home_activity.list.vm.ListViewModel
+import com.example.android.pokeapp.utils.SharedPokemonVM
+import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
-
 
 class ListFragment : Fragment(), CellClickListener {
 
@@ -21,6 +21,7 @@ class ListFragment : Fragment(), CellClickListener {
     private val binding get() = _binding!!
 
     private val listViewModel:ListViewModel by viewModel()
+    private val sharedPokemonVM: SharedPokemonVM by sharedViewModel()
 
     private lateinit var adapter: PokemonAdapter
 
@@ -57,6 +58,8 @@ class ListFragment : Fragment(), CellClickListener {
 
     override fun onCellClickListener(pokemonDetails: PokemonDetails) {
         Toast.makeText(requireContext(), pokemonDetails.name, Toast.LENGTH_SHORT).show()
+        sharedPokemonVM.setPokemonDetails(pokemonDetails)
+        findNavController().navigate(R.id.action_listFragment_to_detailsFragment)
     }
 
 }
