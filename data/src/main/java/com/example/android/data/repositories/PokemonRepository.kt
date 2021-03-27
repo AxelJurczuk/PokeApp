@@ -59,21 +59,40 @@ class PokemonRepository(
     }
     //save dataStore
     suspend fun saveName(name: String) {
-        saveString(name)
+        saveString(name, Constants.PREFERENCES_NAME_KEY)
+    }
+    suspend fun saveLastName(lastName: String) {
+        saveString(lastName, Constants.PREFERENCES_LAST_NAME_KEY)
+    }
+    suspend fun saveEmail(email: String) {
+        saveString(email, Constants.PREFERENCES_EMAIL_KEY)
+    }
+    suspend fun saveFavoritePokemon(pokemon: String) {
+        saveString(pokemon, Constants.PREFERENCES_POKEMON_KEY)
     }
 
-    private suspend fun saveString (value: String){
-        val dataStoreKey = stringPreferencesKey(Constants.PREFERENCES_NAME_KEY)
+    private suspend fun saveString (value: String,key:String){
+        val dataStoreKey = stringPreferencesKey(key)
         profileDataStore.edit { settings ->
             settings[dataStoreKey] = value
         }
     }
     //read
-    suspend fun readName(): String? {
-        val dataStoreKey = stringPreferencesKey(Constants.PREFERENCES_NAME_KEY)
+    private suspend fun readString(key:String): String? {
+        val dataStoreKey = stringPreferencesKey(key)
         val preferences = profileDataStore.data.first()
         return preferences[dataStoreKey]
     }
-
-
+    suspend fun readName(): String? {
+        return readString(Constants.PREFERENCES_NAME_KEY)
+    }
+    suspend fun readLastName(): String? {
+        return readString(Constants.PREFERENCES_LAST_NAME_KEY)
+    }
+    suspend fun readEmail(): String? {
+        return readString(Constants.PREFERENCES_EMAIL_KEY)
+    }
+    suspend fun readFavoritePokemon(): String? {
+        return readString(Constants.PREFERENCES_POKEMON_KEY)
+    }
 }

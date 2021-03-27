@@ -1,11 +1,11 @@
 package com.example.android.pokeapp.home_activity.list.ui
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.android.data.models.domain.PokemonDetails
+import com.example.android.pokeapp.R
 import com.example.android.pokeapp.databinding.ItemPokemonBinding
 import com.squareup.picasso.Picasso
 
@@ -34,6 +34,8 @@ class PokemonAdapter(private var mValues: List<PokemonDetails>?,
                 .load(item.picture.frontPicture)
                 .fit()
                 .centerCrop()
+                .placeholder(R.drawable.ic_placeholder)
+                .error(R.drawable.ic_error)
                 .into(holder.ivPicture)
 
             holder.itemView.setOnClickListener { _ ->

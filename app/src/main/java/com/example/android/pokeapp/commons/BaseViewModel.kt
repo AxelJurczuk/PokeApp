@@ -8,6 +8,10 @@ import com.example.android.pokeapp.utils.SingleLiveEvent
 
 abstract class BaseViewModel: ViewModel() {
 
+    protected var _isLoading = MutableLiveData<Boolean>()
+    val isLoading: LiveData<Boolean>
+        get() = _isLoading
+
     private var _showMessage = SingleLiveEvent<String>()
     val showMessage: LiveData<String>
         get() = _showMessage
@@ -16,10 +20,6 @@ abstract class BaseViewModel: ViewModel() {
     val showError: LiveData<String>
         get() = _showError
 
-
-    protected var _isLoading = MutableLiveData<Boolean>()
-    val isLoading: LiveData<Boolean>
-        get() = _isLoading
 
     fun showMessage(text: String){
         _showMessage.postValue(text)

@@ -1,6 +1,7 @@
 package com.example.android.data.remote.interceptors
 
 import android.app.Application
+import android.util.Log
 import com.example.android.data.R
 import okhttp3.Interceptor
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
@@ -15,13 +16,18 @@ class MockInterceptor(private val application: Application) : Interceptor {
     private val responseSessionError = 401
     private val responseCodeOK = 200
     override fun intercept(chain: Interceptor.Chain): Response {
-        var res: Response? = null
-        // TRANSACTIONS
-        //R.raw.transactions has to be changed, it's from another app
-        if (res == null) res =
-            getMockResponse("/transactions.json", R.raw.transactions, chain, responseCodeOK)
-
-        return res ?: chain.proceed(chain.request())
+        val requestUrl= chain.request().url.toString()
+        return when {
+            requestUrl.contains("limit") -> {
+                getMockResponse("limit", R.raw.pokemons, chain, responseCodeOK)!!
+            }
+            requestUrl.contains("pokemon/") -> {
+                getMockResponse("pokemon/", R.raw.pokemon, chain, responseCodeOK)!!
+            }
+            else -> {
+                chain.proceed(chain.request())
+            }
+        }
     }
 
     private fun getMockResponse(
@@ -43,7 +49,7 @@ class MockInterceptor(private val application: Application) : Interceptor {
         if (method != null && !method.equals(chain.request().method, true)) {
             return null
         }
-        val strUrl = getEndPoint(chain.request().url.toString())
+        val strUrl =chain.request().url.toString()
         var contains = true
         val urls = urlContains.split("%")
         for (x in urls) {
@@ -53,14 +59,6 @@ class MockInterceptor(private val application: Application) : Interceptor {
             return returnMockResponse(chain, responseCode, jsonResource, application)
         }
         return null
-    }
-
-    private fun getEndPoint(url: String): String {
-        var endIndex = url.length
-        if (url.contains("?")) {
-            endIndex = url.lastIndexOf("?")
-        }
-        return url.subSequence(0, endIndex).toString()
     }
 
     private fun returnMockResponse(

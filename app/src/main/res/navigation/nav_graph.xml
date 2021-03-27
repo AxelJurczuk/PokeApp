@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/listFragment"
         android:name="com.example.android.pokeapp.home_activity.list.ui.ListFragment"
-        android:label="fragment_list"
+        android:label="Pokemons"
         tools:layout="@layout/fragment_list" >
         <action
             android:id="@+id/action_listFragment_to_detailsFragment"
@@ -17,11 +17,11 @@
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.example.android.pokeapp.home_activity.profile.ui.ProfileFragment"
-        android:label="fragment_profile"
+        android:label="Your info"
         tools:layout="@layout/fragment_profile" />
     <fragment
         android:id="@+id/detailsFragment"
         android:name="com.example.android.pokeapp.home_activity.details.ui.DetailsFragment"
-        android:label="fragment_details"
+        android:label="Details"
         tools:layout="@layout/fragment_details" />
 </navigation>

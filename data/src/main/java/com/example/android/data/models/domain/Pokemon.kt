@@ -22,7 +22,9 @@ data class PokemonDetails(
     val species: Species,
     val weight: Int,
     @Json(name = "base_experience")
-    val baseExperience: Int
+    val baseExperience: Int,
+    val height:Int,
+    val moves:List<Moves>
 )
 
 data class Picture(
@@ -35,5 +37,9 @@ data class Species(val name: String)
 data class Types (val type:Type)
 
 data class Type (val name:String)
+
+data class Moves (val move:Move)
+
+data class Move (val name:String)
 
 

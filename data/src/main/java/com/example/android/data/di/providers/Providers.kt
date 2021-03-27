@@ -4,6 +4,7 @@ import android.app.Application
 import android.content.Context
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
+import com.example.android.data.BuildConfig
 import com.example.android.data.extensions.dataStore
 import com.example.android.data.local.PokemonDatabase
 import com.example.android.data.remote.PokemonAPI
@@ -13,7 +14,6 @@ import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
-import org.koin.android.BuildConfig
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import java.util.concurrent.TimeUnit
@@ -27,7 +27,7 @@ fun provideOkHttpClient(mockInterceptor: Interceptor?): OkHttpClient {
         .connectTimeout(60, TimeUnit.SECONDS)
         .readTimeout(60, TimeUnit.SECONDS)
         .writeTimeout(60, TimeUnit.SECONDS)
-    if (BuildConfig.FLAVOR == "mock") {
+    if (BuildConfig.mock) {
         mockInterceptor?.let {
             client.addInterceptor(mockInterceptor)
         }
@@ -43,7 +43,7 @@ fun provideMoshi(): Moshi {
 
 fun provideRetrofit(httpClient: OkHttpClient, moshi: Moshi): Retrofit = Retrofit.Builder()
     .client(httpClient)
-    .baseUrl("https://pokeapi.co/api/v2/")
+    .baseUrl(com.example.android.data.BuildConfig.BaseURL)
     .addConverterFactory(MoshiConverterFactory.create(moshi))
     .build()
 

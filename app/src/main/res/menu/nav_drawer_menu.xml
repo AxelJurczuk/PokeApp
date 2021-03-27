@@ -6,8 +6,5 @@
     <item
         android:id="@+id/listFragment"
         android:title="list"/>
-    <item
-        android:id="@+id/item_3"
-        android:title="item_3"/>
 
 </menu>

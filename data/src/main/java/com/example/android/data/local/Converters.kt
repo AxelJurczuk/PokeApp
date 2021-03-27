@@ -1,10 +1,7 @@
 package com.example.android.data.local
 
 import androidx.room.TypeConverter
-import com.example.android.data.models.domain.Picture
-import com.example.android.data.models.domain.Species
-import com.example.android.data.models.domain.Type
-import com.example.android.data.models.domain.Types
+import com.example.android.data.models.domain.*
 
 
 class Converters {
@@ -37,6 +34,16 @@ class Converters {
     @TypeConverter
     fun toTypes (type:String):List<Types>{
         return type.split(",").map { Types(Type(it.trim())) }
+    }
+
+    @TypeConverter
+    fun fromMoves (movesList: List<Moves>):String{
+        return movesList.joinToString { it.move.name }
+    }
+
+    @TypeConverter
+    fun toMoves (move:String):List<Moves>{
+        return move.split(",").map{ Moves(Move(it.trim()))}
     }
 
 }
