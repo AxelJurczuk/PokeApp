@@ -22,4 +22,6 @@
     <string name="enter_your_favorite_pokemon">enter your favorite pokemon</string>
     <string name="save_changes">save changes</string>
     <string name="enter_your_profile_details">Enter your profile details</string>
+    <string name="profile">profile</string>
+    <string name="list">list</string>
 </resources>
