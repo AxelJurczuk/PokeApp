@@ -40,9 +40,13 @@ class ProfileFragment : Fragment() {
             profileViewModel.fetchProfile()
             Toast.makeText(requireContext(), "saved changes", Toast.LENGTH_SHORT).show()
             findNavController().navigate(R.id.action_profileFragment_to_listFragment)
-            Log.i("juan", profileViewModel.toString())
         }
-        Log.i("juan", profileViewModel.toString())
+        profileViewModel.profile.observe(viewLifecycleOwner){profileData->
+            binding.etName.setText(profileData.name)
+            binding.etLastName.setText(profileData.lastName)
+            binding.etEmail.setText(profileData.email)
+            binding.etPokemon.setText(profileData.favoritePokemon)
+        }
 
     }
 

@@ -36,25 +36,21 @@ class ProfileViewModel(private val repository: PokemonRepository) : ViewModel() 
             repository.saveName(name)
         }
     }
-
     fun saveLastName(lastName: String) {
         viewModelScope.launch(Dispatchers.IO) {
             repository.saveLastName(lastName)
         }
     }
-
     fun saveEmail(email: String) {
         viewModelScope.launch(Dispatchers.IO) {
             repository.saveEmail(email)
         }
     }
-
     fun saveFavoritePokemon(pokemon: String) {
         viewModelScope.launch(Dispatchers.IO) {
             repository.saveFavoritePokemon(pokemon)
         }
     }
-
     data class ProfileData(
         val name: String,
         val lastName: String,

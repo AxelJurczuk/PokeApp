@@ -34,32 +34,27 @@
         <item name="colorPrimary">@android:color/transparent</item>
     </style>
 
-    <style name="PokemonName">
-        <item name="android:fontFamily">sans-serif</item>
-        <item name="android:textStyle">bold</item>
-        <item name="android:textSize">24sp</item>
-        <item name="android:text">sans-serif</item>
+    <style name="DrawerItems">
+        <item name="android:fontFamily">@font/montserrat_bold</item>
+        <item name="android:textSize">18sp</item>
     </style>
 
     <style name="PokemonDescription">
         <item name="android:fontFamily">sans-serif</item>
         <item name="android:textStyle">normal</item>
         <item name="android:textSize">14sp</item>
-        <item name="android:text">sans-serif</item>
     </style>
 
     <style name="DetailsTitle">
         <item name="android:fontFamily">sans-serif</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">28sp</item>
-        <item name="android:text">sans-serif</item>
     </style>
 
     <style name="DetailsDescription">
         <item name="android:fontFamily">sans-serif</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">14sp</item>
-        <item name="android:text">sans-serif</item>
     </style>
 
     <style name="Theme.PokeApp.NoActionBar">

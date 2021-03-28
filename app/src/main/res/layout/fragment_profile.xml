@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="@dimen/marginXXL"
         android:layout_marginStart="@dimen/marginXXL"
         android:text="@string/enter_your_profile_details"
         android:fontFamily="@font/montserrat_bold"
