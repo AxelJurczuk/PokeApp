@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".home_activity.profile.ui.ProfileFragment">
 
-
     <EditText
         android:id="@+id/et_name"
         android:layout_width="wrap_content"
@@ -15,6 +14,7 @@
         android:layout_marginTop="120dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        android:nextFocusDown="@id/et_last_name"
         android:hint="enter your name"/>
     <EditText
         android:id="@+id/et_last_name"
@@ -23,6 +23,7 @@
         android:layout_marginStart="50dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/et_name"
+        android:nextFocusDown="@id/et_email"
         android:hint="enter your last name"/>
     <EditText
         android:id="@+id/et_email"
@@ -32,6 +33,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/et_last_name"
         android:inputType="textEmailAddress"
+        android:nextFocusDown="@id/et_pokemon"
         android:hint="enter your email"/>
     <EditText
         android:id="@+id/et_pokemon"
@@ -40,6 +42,7 @@
         android:layout_marginStart="50dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/et_email"
+        android:nextFocusDown="@id/btn_save"
         android:hint="enter your favorite pokemon"/>
 
     <Button

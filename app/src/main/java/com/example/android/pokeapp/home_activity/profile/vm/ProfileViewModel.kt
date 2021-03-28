@@ -14,6 +14,10 @@ class ProfileViewModel(private val repository: PokemonRepository) : ViewModel() 
     val profile: LiveData<ProfileData>
         get() = _profile
 
+    init {
+        fetchProfile()
+    }
+
     fun fetchProfile() {
         viewModelScope.launch(Dispatchers.IO) {
             val name = repository.readName().orEmpty()

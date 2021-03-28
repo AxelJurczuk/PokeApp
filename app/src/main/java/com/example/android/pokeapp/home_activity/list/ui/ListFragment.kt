@@ -86,7 +86,6 @@ class ListFragment : BaseFragment(), CellClickListener {
     }
 
     override fun onCellClickListener(pokemonDetails: PokemonDetails) {
-        Toast.makeText(requireContext(), pokemonDetails.name, Toast.LENGTH_SHORT).show()
         sharedPokemonVM.setPokemonDetails(pokemonDetails)
         findNavController().navigate(R.id.action_listFragment_to_detailsFragment)
     }

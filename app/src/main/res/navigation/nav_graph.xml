@@ -18,7 +18,11 @@
         android:id="@+id/profileFragment"
         android:name="com.example.android.pokeapp.home_activity.profile.ui.ProfileFragment"
         android:label="Your info"
-        tools:layout="@layout/fragment_profile" />
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_listFragment"
+            app:destination="@id/listFragment" />
+    </fragment>
     <fragment
         android:id="@+id/detailsFragment"
         android:name="com.example.android.pokeapp.home_activity.details.ui.DetailsFragment"

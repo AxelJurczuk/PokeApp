@@ -5,14 +5,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.widget.addTextChangedListener
+import android.widget.Toast
+import androidx.navigation.fragment.findNavController
 import com.example.android.pokeapp.R
-import com.example.android.pokeapp.databinding.FragmentListBinding
 import com.example.android.pokeapp.databinding.FragmentProfileBinding
 import com.example.android.pokeapp.home_activity.profile.vm.ProfileViewModel
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
-import org.koin.androidx.viewmodel.ext.android.viewModel
-
 
 class ProfileFragment : Fragment() {
 
@@ -39,6 +37,8 @@ class ProfileFragment : Fragment() {
             profileViewModel.saveFavoritePokemon(binding.etPokemon.text.toString())
 
             profileViewModel.fetchProfile()
+            Toast.makeText(requireContext(), "saved changes", Toast.LENGTH_SHORT).show()
+            findNavController().navigate(R.id.action_profileFragment_to_listFragment)
         }
 
     }
