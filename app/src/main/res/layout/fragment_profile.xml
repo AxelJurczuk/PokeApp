@@ -1,49 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".home_activity.profile.ui.ProfileFragment">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/tv_enter_details"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="120dp"
+        android:layout_marginStart="@dimen/marginXXL"
+        android:text="@string/enter_your_profile_details"
+        android:fontFamily="@font/montserrat_bold"
+        android:textSize="18sp"/>
 
     <EditText
         android:id="@+id/et_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="120dp"
+        android:layout_marginStart="@dimen/marginXXL"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_enter_details"
         android:nextFocusDown="@id/et_last_name"
-        android:hint="enter your name"/>
+        android:hint="@string/enter_your_name"/>
     <EditText
         android:id="@+id/et_last_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
+        android:layout_marginStart="@dimen/marginXXL"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/et_name"
         android:nextFocusDown="@id/et_email"
-        android:hint="enter your last name"/>
+        android:hint="@string/enter_your_last_name"/>
     <EditText
         android:id="@+id/et_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
+        android:layout_marginStart="@dimen/marginXXL"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/et_last_name"
         android:inputType="textEmailAddress"
         android:nextFocusDown="@id/et_pokemon"
-        android:hint="enter your email"/>
+        android:hint="@string/enter_your_email"/>
     <EditText
         android:id="@+id/et_pokemon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
+        android:layout_marginStart="@dimen/marginXXL"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/et_email"
         android:nextFocusDown="@id/btn_save"
-        android:hint="enter your favorite pokemon"/>
+        android:hint="@string/enter_your_favorite_pokemon"/>
 
     <Button
         android:id="@+id/btn_save"
@@ -51,7 +64,9 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/et_pokemon"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginStart="50dp"
-        android:text="save changes"/>
+        android:layout_marginStart="@dimen/marginXXL"
+        android:text="@string/save_changes"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

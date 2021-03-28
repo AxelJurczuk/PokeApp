@@ -35,8 +35,8 @@ class DetailsFragment : Fragment() {
         pokemonDetails?.let{
             binding.tvSpecies.text = it.species.name
             binding.tvBaseExperience.text = it.baseExperience.toString()
-            binding.tvHeight.text = it.height.toString()
-            binding.tvMoves.text = it.moves.joinToString { it.move.name }
+            binding.tvHeight.text = "HEIGHT: "+it.height.toString()+" inch"
+            binding.tvMoves.text = "MOVES: "+it.moves.subList(0,4).joinToString { it.move.name }
 
             Picasso.get()
                 .load(it.picture.frontPicture)

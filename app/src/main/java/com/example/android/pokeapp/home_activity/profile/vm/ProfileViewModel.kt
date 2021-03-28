@@ -10,13 +10,14 @@ import kotlinx.coroutines.launch
 
 class ProfileViewModel(private val repository: PokemonRepository) : ViewModel() {
 
+    init {
+        fetchProfile()
+    }
+
     private var _profile = MutableLiveData<ProfileData>()
     val profile: LiveData<ProfileData>
         get() = _profile
 
-    init {
-        fetchProfile()
-    }
 
     fun fetchProfile() {
         viewModelScope.launch(Dispatchers.IO) {

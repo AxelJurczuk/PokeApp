@@ -11,9 +11,12 @@
     <ImageView
         android:id="@+id/iv_pokemon"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="220dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"
+        android:padding="16dp"
+        android:background="@color/black"
+        />
     <TextView
         android:id="@+id/tv_species"
         android:layout_width="wrap_content"
@@ -21,7 +24,9 @@
         app:layout_constraintTop_toBottomOf="@id/iv_pokemon"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:textSize="18sp" />
+        android:fontFamily="@font/montserrat_italic"
+        android:textSize="18sp"
+        android:layout_margin="@dimen/marginM"/>
     <TextView
         android:id="@+id/tv_height"
         android:layout_width="wrap_content"
@@ -29,6 +34,8 @@
         app:layout_constraintTop_toBottomOf="@id/tv_species"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        android:fontFamily="@font/montserrat_medium"
+        android:layout_margin="@dimen/marginM"
         android:textSize="18sp" />
     <TextView
         android:id="@+id/tv_base_experience"
@@ -37,7 +44,9 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_height"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:textSize="18sp" />
+        android:fontFamily="@font/montserrat_bold"
+        android:textSize="18sp"
+        android:layout_margin="@dimen/marginM"/>
     <TextView
         android:id="@+id/tv_moves"
         android:layout_width="wrap_content"
@@ -45,7 +54,10 @@
         app:layout_constraintTop_toBottomOf="@id/tv_base_experience"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:textSize="18sp" />
+        android:fontFamily="@font/montserrat_medium"
+        android:textSize="18sp"
+        android:padding="@dimen/marginM"
+        android:layout_margin="@dimen/marginL"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.core.widget.NestedScrollView>

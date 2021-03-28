@@ -24,12 +24,24 @@
             app:layout_constraintTop_toBottomOf="@id/iv_picture"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            style="@style/PokemonName"/>
+            android:fontFamily="@font/montserrat_bold"
+            android:textSize="20sp"/>
+        <TextView
+            android:id="@+id/tv_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tv_pokemon_name"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="@font/montserrat_regular"
+            android:textSize="12sp"
+            android:textAllCaps="true"/>
         <LinearLayout
             android:id="@+id/info_layout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/tv_pokemon_name"
+            app:layout_constraintTop_toBottomOf="@id/tv_type"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:orientation="horizontal">
@@ -42,21 +54,10 @@
                 android:id="@+id/tv_weight"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
+                android:layout_marginStart="8dp"
                 android:layout_marginBottom="8dp"
-                style="@style/PokemonDescription"/>
+                android:fontFamily="@font/montserrat_medium"/>
         </LinearLayout>
-
-        <TextView
-            android:id="@+id/tv_type"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/info_layout"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginStart="16dp"
-            android:layout_marginBottom="8dp"
-            style="@style/PokemonDescription" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

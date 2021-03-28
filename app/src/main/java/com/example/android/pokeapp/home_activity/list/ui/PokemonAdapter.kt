@@ -26,7 +26,7 @@ class PokemonAdapter(private var mValues: List<PokemonDetails>?,
 
             holder.tvPokemonName.text = item.name
 
-            holder.tvWeight.text = item.weight.toString()
+            holder.tvWeight.text = item.weight.toString()+" g"
 
             holder.tvType.text = item.types.joinToString { it.type.name }
 

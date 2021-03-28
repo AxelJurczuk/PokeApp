@@ -2,6 +2,7 @@ package com.example.android.pokeapp.home_activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.widget.TextView
 import androidx.drawerlayout.widget.DrawerLayout
@@ -21,6 +22,7 @@ class HomeActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
 
     private val profileViewModel: ProfileViewModel by viewModel()
+
     private val listViewModel: ListViewModel by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -49,7 +51,9 @@ class HomeActivity : AppCompatActivity() {
             profileLastName.text = it.lastName
             profileEmail.text = it.email
             profilePokemon.text = it.favoritePokemon
+            Log.i("juan", it.name)
         }
+
 
     }
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

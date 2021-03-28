@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="textColorWhite">#ffffff</color>
+    <color name="textColorBlack">#000000</color>
+    <color name="textColorRed">#f05545</color>
+
+    <style name="FontRegular" parent="@android:style/TextAppearance">
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textColor">@color/textColorBlack</item>
+    </style>
+    <style name="FontBold" parent="@android:style/TextAppearance">
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/textColorBlack</item>
+    </style>
+
+    //Regular
+    <style name="FontRegular.XL">
+        <item name="android:textSize">@dimen/textSizeXL</item>
+    </style>
+    <style name="FontRegular.L">
+        <item name="android:textSize">@dimen/textSizeL</item>
+    </style>
+    <style name="FontRegular.M">
+        <item name="android:textSize">@dimen/textSizeM</item>
+    </style>
+    <style name="FontRegular.S">
+        <item name="android:textSize">@dimen/textSizeS</item>
+    </style>
+    //Bold
+    <style name="FontBold.XL">
+        <item name="android:textSize">@dimen/textSizeXL</item>
+    </style>
+    <style name="FontBold.L">
+        <item name="android:textSize">@dimen/textSizeL</item>
+    </style>
+    <style name="FontBold.M">
+        <item name="android:textSize">@dimen/textSizeM</item>
+    </style>
+    <style name="FontBold.S">
+        <item name="android:textSize">@dimen/textSizeS</item>
+    </style>
+    <style name="FontBold.S.Red">
+        <item name="android:textColor">@color/textColorRed</item>
+    </style>
+    <style name="FontBold.S.White">
+        <item name="android:textColor">@color/textColorWhite</item>
+    </style>
+
+
+</resources>

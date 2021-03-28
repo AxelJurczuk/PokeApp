@@ -9,21 +9,28 @@
         android:orientation="vertical">
         <TextView
             android:id="@+id/dialog_error_title"
+            style="@style/FontBold.XL"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/black"
-            android:text="alert" />
+            android:padding="@dimen/marginM"
+            android:textColor="@color/white"
+            android:text="@string/alert"
+            android:textAlignment="center"/>
         <TextView
             android:id="@+id/dialog_error_body"
+            style="@style/FontRegular.L"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/purple_700"
-            />
+            android:layout_margin="@dimen/marginXL"
+            android:textAlignment="center"/>
         <Button
             android:id="@+id/dialog_error_buton"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
+            style="@style/Theme.AppCompat.DayNight.NoActionBar"
             android:layout_gravity="center_horizontal"
-            android:text="accept" />
+            android:layout_marginBottom="@dimen/marginXL"
+            android:text="@string/accept" />
     </LinearLayout>
 </ScrollView>
