@@ -31,7 +31,6 @@ class PokemonRepository(
             is ResultHandler.Success -> {
                 try {
                     result.data.pokemonList.forEachIndexed { index, pokemon ->
-                        //no logré encontrar el pokemon 27. Error 404. Pareciera ser error con la API
                         getPokemonDetails(index + 1)?.let {
                             pokemonList.add(it)
                         }
@@ -49,14 +48,9 @@ class PokemonRepository(
             is ResultHandler.NetworkError -> result
         }
     }
-
     private suspend fun getPokemonDetails(id: Int): PokemonDetails? =
         api.getPokemonDetails(id).body()
 
-    //Database
-    suspend fun deletePokemons() {
-        pokemonDB.pokemonDao().deleteAll()
-    }
     //save dataStore
     suspend fun saveName(name: String) {
         saveString(name, Constants.PREFERENCES_NAME_KEY)
